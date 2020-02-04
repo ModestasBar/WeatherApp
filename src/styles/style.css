@@ -2,10 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: cursive, monospace, sans-serif;
 }
 
 /*------Background image---------*/
-.background {
+.background  {
   position: relative;
   z-index: 1; 
   width: 100%; 
@@ -27,12 +28,7 @@
   color: #fff;
   border-radius: 5px;
   padding: 10px;
-  font-size: 150%;
-}
-
-.tables {
-  display: flex;
-  flex-wrap: wrap;
+  font-size: 1.4em;
 }
 
 /*----base-info-------*/
@@ -41,10 +37,11 @@
   justify-content: center;
   align-items: center;
   font-size: 2em;
+  text-shadow: 1px 1px 1px rgb(134, 181, 243);
 }
 
 .base-info .favorite {
-  margin-left: .5em;
+  margin-left: .5em;  
 }
 
 .base-info .select-location {
@@ -64,6 +61,23 @@
   border: 3px solid rgba(172, 146, 146, 0.459);
   flex-grow: 3;
   margin: .5rem;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  color: black;
+  border-radius: 50%;
+  background-color: rgb(214, 230, 225);
+  opacity: .7;
+  font-size: 5em;
+  text-align: center;
+  vertical-align: middle; 
+}
+
+.text {
+  font-size: 1.5rem;
+  color: rgb(0, 0, 0);
 }
 /*-------------------*/
 

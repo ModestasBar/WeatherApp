@@ -1,10 +1,9 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
+import Circle from './Circle';
 // import PropTypes from 'prop-types';
 
-const AnyReactComponent = ({ text }) => <div><h1>{text}</h1></div>;
-
-const Map = (props) => {
+const Map = ({ data: { list } }) => {
   const defaultSettings = {
     center: {
       lat: 56,
@@ -12,6 +11,7 @@ const Map = (props) => {
     },
     zoom: 7,
   };
+  const temperature = list[0].main.temp;
   return (
     <table className="google-maps">
       <caption>Map</caption>
@@ -22,10 +22,10 @@ const Map = (props) => {
             defaultCenter={defaultSettings.center}
             defaultZoom={defaultSettings.zoom}
           >
-            <AnyReactComponent
+            <Circle
               lat={56}
               lng={24}
-              text="My marker"
+              text={temperature}
             />
           </GoogleMapReact>
         </td>
