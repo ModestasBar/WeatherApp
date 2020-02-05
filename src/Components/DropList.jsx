@@ -1,11 +1,11 @@
 import React from 'react';
-import Input from './Input';
 // import PropTypes from 'prop-types';
 
-const Countries = (props) => (
+const DropList = (props) => (
   <div className="dropdown">
-    <Input text="Select country" type="button" classes="button drop-button" />
+    <input className="drop-button" type="button" value="Select country" />
     <ul>
+      {/* <input className="location" value="Detect my location" /> */}
       <li><a href="#">Weather app1</a></li>
       <li><a href="#">Weather app2</a></li>
       <li><a href="#">Weather app3</a></li>
@@ -34,4 +34,4 @@ const Countries = (props) => (
 
 // };
 
-export default Countries;
+export default DropList;

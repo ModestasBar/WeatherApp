@@ -13,12 +13,9 @@
   /* border-collapse: collapse; */
   font-size: 1em;
   flex-grow: 1;
-  opacity: 1;
   text-align: center;
 }
 
-td {
-}
 
 .details-table {
   flex-grow: 0;
