@@ -3,15 +3,14 @@ import GoogleMapReact from 'google-map-react';
 import Circle from './Circle';
 // import PropTypes from 'prop-types';
 
-const Map = ({ data: { list } }) => {
+const Map = ({ data: { main, coord } }) => {
   const defaultSettings = {
     center: {
-      lat: 56,
-      lng: 24,
+      lat: coord.lat,
+      lng: coord.lon,
     },
-    zoom: 7,
+    zoom: 11,
   };
-  const temperature = list[0].main.temp;
   return (
     <table className="google-maps">
       <caption>Map</caption>
@@ -19,13 +18,13 @@ const Map = ({ data: { list } }) => {
         <td>
           <GoogleMapReact
             bootstrapURLKeys={{ key: 'AIzaSyCA8-4RdSQg0lSrYKB3jsNmeFbPfynfzbk' }}
-            defaultCenter={defaultSettings.center}
             defaultZoom={defaultSettings.zoom}
+            center={defaultSettings.center}
           >
             <Circle
-              lat={56}
-              lng={24}
-              text={temperature}
+              lat={coord.lat}
+              lng={coord.lon}
+              text={main.temp}
             />
           </GoogleMapReact>
         </td>

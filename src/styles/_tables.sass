@@ -1,0 +1,25 @@
+.tables
+  display: flex
+  flex-wrap: wrap
+
+.custom-table, .details-table
+  background-color: rgba(15, 15, 17, 0.87)
+  color: #fff
+  table-layout: fixed
+  margin: .5rem
+  border: 3px solid rgba(172, 146, 146, 0.459)
+  border-radius: 1rem
+ /* border-collapse: collapse; */
+  font-size: 1em
+  flex-grow: 1
+  text-align: center
+
+.details-table
+  flex-grow: 0
+
+  & tr
+    padding-bottom: .5rem
+
+@media screen and (max-width: 800px)
+  .details-table
+    flex-grow: 1

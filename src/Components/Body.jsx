@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
 import Map from './Map';
-import Search from './Search';
 import Table from './Table';
 import Details from './Details';
 // import PropTypes from 'prop-types';

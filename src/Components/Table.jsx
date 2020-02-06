@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/table.css';
 // import PropTypes from 'prop-types';
 import { dateFilter } from '../dataFilter';
 

@@ -3,7 +3,7 @@ const objectFilter = (data, background) => {
   const weekDays = filterDays(data.list, 8);
   const next15hours = data.list.slice(0, 5);
 
-  const backgroundURL = background.results[0].urls.small;
+  const backgroundURL = background.results[0].urls.regular;
 
   return {
     weekDays,

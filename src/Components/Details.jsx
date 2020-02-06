@@ -1,9 +1,7 @@
 import React from 'react';
-import '../styles/table.css';
 // import PropTypes from 'prop-types';
 
-const Details = ({ data, caption }) => {
-  const { main, wind, weather } = { ...data.list[0] };
+const Details = ({ data: { main, wind, weather }, caption }) => {
   return (
     <table className="details-table">
       <caption>{caption}</caption>

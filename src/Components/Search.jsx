@@ -1,14 +1,16 @@
-import React from 'react';
-import Countries from './Countries';
+import React, { useState } from 'react';
+import List from './List';
 import Input from './Input';
 // import PropTypes from 'prop-types';
 
-const Search = (props) => {
+const Search = ({ countries, changeByName, detectPosition }) => {
+  const [city, setCity] = useState('');
   return (
     <div className="search">
-      <Input text="Detect location" type="button" />
-      <input className="country-input" type="text" placeholder="Country or ZIP code" />
-      <Countries />
+      <Input text="Detect location" type="button" event={detectPosition} />
+      <input className="country-input" type="text" placeholder="Search by city" onChange={(e) => setCity(e.target.value)} />
+      <input className="button" value="Submit" onClick={() => changeByName(city)} />
+      <List countries={countries} changeByName={changeByName} />
     </div>
   );
 };
