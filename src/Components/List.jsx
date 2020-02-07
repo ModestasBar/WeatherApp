@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
+import PropTypes from 'prop-types';
 import Input from './Input';
 import ListItem from './ListItem';
-// import PropTypes from 'prop-types';
 
 const List = ({ countries, changeByName }) => (
   <div className="dropdown">
@@ -9,6 +9,7 @@ const List = ({ countries, changeByName }) => (
     <ul>
       {Object.values(countries).map((val) => (
         <ListItem
+          key={val.name}
           country={val}
           changeByName={changeByName}
         />
@@ -17,8 +18,9 @@ const List = ({ countries, changeByName }) => (
   </div>
 );
 
-// Search.propTypes = {
+List.propTypes = {
+  countries: PropTypes.shape({}).isRequired,
+  changeByName: PropTypes.func.isRequired,
+};
 
-// };
-
-export default List;
+export default memo(List);

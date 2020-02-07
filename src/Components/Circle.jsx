@@ -1,17 +1,15 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
-const Text = ({ text }) => (
+const Circle = ({ text }) => (
   <div className="circle">
-    <span className="text">
-      {text}
-      &#8451;
-    </span>
+    {text}
+    &#8451;
   </div>
 );
 
-Text.propTypes = {
-
+Circle.propTypes = {
+  text: PropTypes.number.isRequired,
 };
 
-export default Text;
+export default memo(Circle);

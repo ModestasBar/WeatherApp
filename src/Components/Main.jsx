@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import PropTypes from 'prop-types';
 import Base from './Base';
 import Body from './Body';
 import { objectFilter } from '../dataFilter';
@@ -13,7 +14,6 @@ const Main = ({
     <div className="background">
       <img className="background-img" src={backgroundURL} alt="bg" />
       <div className="box">
-        {console.log(background)}
         <Base
           data={today}
           changeByName={changeByName}
@@ -30,8 +30,12 @@ const Main = ({
   );
 };
 
-// Main.propTypes = {
-
-// };
+Main.propTypes = {
+  today: PropTypes.shape({}).isRequired,
+  bundle: PropTypes.shape({}).isRequired,
+  background: PropTypes.shape({}).isRequired,
+  changeByName: PropTypes.func.isRequired,
+  detectPosition: PropTypes.func.isRequired,
+};
 
 export default memo(Main);

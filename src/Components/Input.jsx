@@ -1,18 +1,27 @@
-import React from 'react';
-// import PropTypes from 'prop-types';
+import React, { memo } from 'react';
+import PropTypes from 'prop-types';
 
 const Input = ({
   text, type, classes = 'button', event = null,
 }) => (
-    <input
-      className={classes}
-      type={type}
-      value={text}
-      onClick={event ? () => event() : null}
-    />
-  );
+  <input
+    className={classes}
+    type={type}
+    value={text}
+    onClick={event ? () => event() : null}
+  />
+);
 
-// Favorite.propTypes = {
+Input.defaultProps = {
+  classes: 'button',
+  event: () => {},
+};
 
+Input.propTypes = {
+  text: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  classes: PropTypes.string,
+  event: PropTypes.func,
+};
 
-export default Input;
+export default memo(Input);

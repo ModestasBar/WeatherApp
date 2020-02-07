@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import Input from './Input';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const ListItem = ({ country, changeByName }) => (
   <li>
@@ -15,8 +14,12 @@ const ListItem = ({ country, changeByName }) => (
     {localStorage.getItem(`${country.capital}`) ? <FontAwesomeIcon icon={faHeart} className="favorite" /> : null}
   </li>
 );
-// ListItem.propTypes = {
+ListItem.propTypes = {
+  country: PropTypes.shape({
+    capital: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+  }).isRequired,
+  changeByName: PropTypes.func.isRequired,
+};
 
-// };
-
-export default ListItem;
+export default memo(ListItem);

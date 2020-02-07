@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { countries } from 'countries-list';
+import PropTypes from 'prop-types';
 import Input from './Input';
 import Search from './Search';
-// import PropTypes from 'prop-types';
 
 const Base = ({
   data, detectPosition, changeByName, bundle,
@@ -31,15 +31,14 @@ const Base = ({
 
   return (
     <div className="base-info">
-      {console.log("base load")}
       <div className="headling">
         <h4>{`${data.sys.country}, ${data.name}`}</h4>
         <h2>
-          {data.main.temp}
+          {Math.round(data.main.temp)}
           &#8451;
           <FontAwesomeIcon
             icon={faStar}
-            enabled={favorite}
+            enabled={favorite.toString()}
             className={localStorage.getItem(`${data.name}`) ? 'star favorite' : 'star'}
             onClick={() => handleFavorite(!favorite)}
           />
@@ -64,8 +63,21 @@ const Base = ({
   );
 };
 
-// Base.propTypes = {
+Base.propTypes = {
+  data: PropTypes.shape({
+    name: PropTypes.string,
+    main: PropTypes.shape({
+      temp: PropTypes.number.isRequired,
+    }),
+    sys: PropTypes.shape({
+      country: PropTypes.string.isRequired,
+    }),
+  }).isRequired,
+  bundle: PropTypes.shape({
+    list: PropTypes.array.isRequired,
+  }).isRequired,
+  changeByName: PropTypes.func.isRequired,
+  detectPosition: PropTypes.func.isRequired,
+};
 
-// };
-
-export default Base;
+export default memo(Base);

@@ -1,0 +1,212 @@
+$black: rgb(0, 0, 0);
+$white: rgb(255, 255, 255);
+$yellow: rgb(251, 255, 0);
+$table-background: rgba(15, 15, 17, 0.87);
+$border: 3px solid rgba(172, 146, 146, 0.459);
+$hover: rgb(127, 216, 219);
+
+@mixin flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+@mixin table-properties($background, $color, $border) {
+  background-color: $background;
+  border: 3px solid rgba(172, 146, 146, 0.459);
+  color: $border;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: cursive, monospace, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.background {
+  height: relative;
+  width: 100%;
+  z-index: 1;
+
+  .background-img {
+    bottom: 0;
+    left: 0;
+    min-height: 100%;
+    min-width: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+}
+
+.box {
+  border-radius: 5px;
+  color: $white;
+  font-size: 1.4em;
+  padding: 10px;
+}
+
+.base-info {
+  @include flex-center;
+  font-size: 1.5em;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgb(134, 181, 243);
+
+  .star {
+    cursor: pointer;
+    margin-left: 0.5em;
+  }
+
+  .favorite {
+    color: $yellow;
+  }
+
+  .navigation {
+    display: block;
+    font-size: 1.5em;
+    left: 18px;
+    position: absolute;
+    top: 10px;
+  }
+}
+
+.google-maps {
+  border: $border;
+  border-radius: 5px;
+  flex-grow: 1;
+  height: 50vh;
+  margin: 0.5rem;
+  width: 50vw;
+}
+
+.circle {
+  @include flex-center;
+  background-color: rgb(214, 230, 225);
+  border-radius: 50%;
+  color: $black;
+  font-size: 1.5rem;
+  height: 150px;
+  opacity: 0.7;
+  width: 150px;
+}
+
+.tables {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.custom-table,
+.details-table {
+  @include table-properties($table-background, $white, $border);
+  border-radius: 1rem;
+  flex-grow: 1;
+  font-size: 1em;
+  margin: 0.5rem;
+  table-layout: fixed;
+}
+
+.details-table {
+  flex-grow: 0;
+
+  &tr {
+    padding-bottom: 0.5rem;
+  }
+}
+
+.dropdown {
+  ul {
+    @include table-properties($table-background, $white, $border);
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    list-style: none;
+    margin-top: 10px;
+    opacity: 0;
+    overflow: auto;
+    position: absolute;
+    transform: translateY(-10px);
+    transition: 0.4s ease;
+    width: 40vw;
+  }
+
+  li {
+    @include flex-center;
+    font-size: 0.8em;
+    height: 100%;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    padding: 10px 0;
+    width: 100%;
+
+    &:hover {
+      background-color: rgb(12, 45, 54);
+    }
+  }
+
+  &:hover {
+    color: $hover;
+  }
+
+  .drop-button {
+    &:focus + ul {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0px);
+    }
+  }
+}
+
+.button {
+  background-color: transparent;
+  border: 0;
+  color: $white;
+  cursor: pointer;
+  font-size: 0.5em;
+  font-weight: bold;
+  margin: 5px;
+  text-align: start;
+  text-decoration: none;
+}
+.search {
+  @include table-properties($table-background, $white, $border);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  text-align: center;
+  width: 40vw;
+
+  .location-detect {
+    cursor: pointer;
+    font-size: 18px;
+
+    &:hover {
+      color: $hover;
+    }
+
+    .country-input {
+      border-radius: 5px;
+      padding: 0.3em;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  body {
+    font-size: 0.7rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  body {
+    font-size: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .details-table {
+    flex-grow: 1;
+  }
+}
