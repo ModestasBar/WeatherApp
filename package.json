@@ -29,6 +29,7 @@
     "babel-loader": "^8.0.6",
     "countries-list": "^2.5.1",
     "css-loader": "^3.4.2",
+    "dotenv": "^8.2.0",
     "google-map-react": "^1.1.5",
     "html-webpack-plugin": "^3.2.0",
     "loader": "^2.1.1",

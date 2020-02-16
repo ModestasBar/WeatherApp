@@ -3,9 +3,9 @@ import { useCurrentPosition } from 'react-use-geolocation';
 import Unsplash, { toJson } from 'unsplash-js';
 import Main from './Components/Main';
 
-const appID = '9e7d0e7cbd1db75e9fd5cf2bc71752c5';
-const unsplashKey = 'ece5c91e2cea4d8ba76726dc4b99d134e8c6dbf68091470dfa23b9e3a1e301ff';
-const unsplashSecret = '2559581b2c23972362f2e93b879cfbfdbd727d11016ecf36016aa2ded147f557';
+const appID = process.env.WEATHER_ID;
+const unsplashKey = process.env.UNSPLASH_ACCESS_KEY;
+const unsplashSecret = process.env.UNSPLASH_SECRET_KEY;
 
 const weatherAPI = (key, q = '', lat = 0, lot = 0) => ({
   todayAPI: `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lot}&units=metric&APPID=${key}`,
