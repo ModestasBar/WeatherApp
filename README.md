@@ -12,7 +12,5 @@
 
 ### Demo
 
-https://guarded-ridge-24999.herokuapp.com/
+<img src="https://user-images.githubusercontent.com/42537149/74612456-45c2ae80-510e-11ea-9273-8427b3e39c4c.png" width="30%" height="50%"> <img src="https://user-images.githubusercontent.com/42537149/74612535-d26d6c80-510e-11ea-926b-d9510f6f2c21.png" width="65%">
 
-![alt tag](https://user-images.githubusercontent.com/42537149/74612456-45c2ae80-510e-11ea-9273-8427b3e39c4c.png) 
-![alt tag](https://user-images.githubusercontent.com/42537149/74612535-d26d6c80-510e-11ea-926b-d9510f6f2c21.png)
