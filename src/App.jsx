@@ -8,10 +8,10 @@ const unsplashKey = process.env.UNSPLASH_ACCESS_KEY;
 const unsplashSecret = process.env.UNSPLASH_SECRET_KEY;
 
 const weatherAPI = (key, q = '', lat = 0, lot = 0) => ({
-  todayAPI: `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lot}&units=metric&APPID=${key}`,
-  bundleAPI: `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lot}&units=metric&APPID=${key}`,
-  todayNameAPI: `http://api.openweathermap.org/data/2.5/weather?q=${q}&units=metric&APPID=${key}`,
-  bundleNameAPI: `http://api.openweathermap.org/data/2.5/forecast?q=${q}&units=metric&APPID=${key}`,
+  todayAPI: `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lot}&units=metric&APPID=${key}`,
+  bundleAPI: `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lot}&units=metric&APPID=${key}`,
+  todayNameAPI: `https://api.openweathermap.org/data/2.5/weather?q=${q}&units=metric&APPID=${key}`,
+  bundleNameAPI: `https://api.openweathermap.org/data/2.5/forecast?q=${q}&units=metric&APPID=${key}`,
 });
 
 const App = () => {
