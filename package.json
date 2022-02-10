@@ -55,7 +55,7 @@
     "eslint-plugin-react": "^7.18.0",
     "eslint-plugin-react-hooks": "^1.7.0",
     "install-peerdeps": "^2.0.1",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "sass-lint": "^1.13.1",
     "sass-loader": "^8.0.2"
   }
